@@ -1,11 +1,11 @@
 package logics;
 
-import entities.*;
+import entities.Patient;
+import entities.Region;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import javax.persistence.PersistenceException;
-import java.sql.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -71,7 +71,7 @@ public class PatientLogic {
             case 2-> {
                 List<Patient> patientList = session.createQuery("SELECT s FROM Patient s",
                         Patient.class).getResultList();
-                System.out.println("Студент");
+                System.out.println("Пациент");
                 System.out.printf("%-15s%-15s%-15s%-15s%-15s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                 patientList.forEach(System.out::println);
             }
@@ -88,7 +88,7 @@ public class PatientLogic {
         System.out.println("2.Фамилию пациента");
         System.out.println("3.Учебный курс");
         System.out.println("4.ID мед. участка");
-        System.out.println("5.ID куратора");
+        System.out.println("5.ID врача");
         System.out.print(">");
         int i = scanner.nextInt();
         switch (i) {
@@ -178,7 +178,7 @@ public class PatientLogic {
                 try {
                     patientList = session.createQuery("SELECT s FROM Patient s WHERE patient_id =" + patient_id,
                             Patient.class).getResultList();
-                    System.out.println("Студент");
+                    System.out.println("Пациент");
                     System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                     patientList.forEach(System.out::println);
                 }
@@ -192,7 +192,7 @@ public class PatientLogic {
                 try {
                     patientList = session.createQuery("SELECT s FROM Patient s WHERE patient_firstname =" + patient_firstname,
                             Patient.class).getResultList();
-                    System.out.println("Студент");
+                    System.out.println("Пациент");
                     System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                     patientList.forEach(System.out::println);
                 }
@@ -206,7 +206,7 @@ public class PatientLogic {
                 try {
                     patientList = session.createQuery("SELECT s FROM Patient s WHERE patient_lastname =" + patient_lastname,
                             Patient.class).getResultList();
-                    System.out.println("Студент");
+                    System.out.println("Пациент");
                     System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                     patientList.forEach(System.out::println);
                 }
@@ -220,7 +220,7 @@ public class PatientLogic {
                 try {
                     patientList = session.createQuery("SELECT s FROM Patient s WHERE phonenumber =" + phonenumber,
                             Patient.class).getResultList();
-                    System.out.println("Студент");
+                    System.out.println("Пациент");
                     System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                     patientList.forEach(System.out::println);
                 }
@@ -234,7 +234,7 @@ public class PatientLogic {
                 try {
                     patientList = session.createQuery("SELECT s FROM Patient s WHERE region_id =" + region_id,
                             Patient.class).getResultList();
-                    System.out.println("Студент");
+                    System.out.println("Пациент");
                     System.out.printf("%-30s%-30s%-30s%-30s%-30s\n","ID","Имя","Фамилия","Телефонный номер","ID мед. участка");
                     patientList.forEach(System.out::println);
                 }

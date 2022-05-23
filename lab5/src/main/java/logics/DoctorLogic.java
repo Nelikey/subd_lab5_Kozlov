@@ -72,7 +72,7 @@ public class DoctorLogic {
     }
     private void update(Session session){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите ID куратора:");
+        System.out.print("Введите ID врача:");
         int doctor_id = scanner.nextInt();
         System.out.println("Что вы хотите обновить?");
         System.out.println("1.Имя участкового врача");

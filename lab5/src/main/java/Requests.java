@@ -9,7 +9,9 @@ import java.util.Scanner;
 public class Requests {
     public void work(SessionFactory sessionFactory){
         System.out.println("1.Первый запрос");
-        System.out.println("2.Вернуться в меню");
+        System.out.println("2.Второй запрос");
+        System.out.println("3.Третий запрос");
+        System.out.println("4.Вернуться в меню");
         System.out.print(">");
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
@@ -37,10 +39,10 @@ public class Requests {
     private void firstRequest(Session session){
         List<Record> records = session.createQuery("SELECT r FROM Record r",
                 Record.class).getResultList();
-        System.out.printf("%-20s%-20s%-20s\n", "Имя пациента", "Фамилия пациента", "Диагноз", "Дата выздоровления");
+        System.out.printf("%-20s%-20s%-20s\n", "Имя пациента", "Фамилия пациента", "Диагноз");
         for (Record record:records) {
             System.out.printf("%-20s%-20s%-20s\n", record.getPatient().getFirstname(), record.getPatient().getLastname(),
-                    record.getDesease(), record.getRecoveryDate());
+                    record.getDesease());
         }
     }
 

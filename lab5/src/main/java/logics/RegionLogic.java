@@ -76,7 +76,7 @@ public class RegionLogic {
         int i = scanner.nextInt();
         switch (i) {
             case 1 -> {
-                System.out.print("Введите название кафедры:");
+                System.out.print("Введите название мед. участка:");
                 scanner.nextLine();
                 String region_name = scanner.next();
                 try {
@@ -107,22 +107,22 @@ public class RegionLogic {
 
     private void filter(Session session){
         System.out.println("\tПоля");
-        System.out.println("1.ID кафедры");
-        System.out.println("2.Название кафедры");
-        System.out.println("3.ФИО заведующего кафедры");
+        System.out.println("1.ID мед. участка");
+        System.out.println("2.Название мед. участка");
+        System.out.println("3.ФИО заведующего мед. участка");
         System.out.print(">");
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
         List<Region> regionList;
         switch (i) {
             case 1 -> {
-                System.out.print("Введите ID кафедры:");
+                System.out.print("Введите ID мед. участка:");
                 int region_id = scanner.nextInt();
                 try {
                     regionList = session.createQuery("SELECT g FROM Region g WHERE region_id =" + region_id,
                             Region.class).getResultList();
-                    System.out.println("Кафедра");
-                    System.out.printf("%-30s%-30s%-30s\n","ID","Название кафедры","ФИО заведующего кафедры");
+                    System.out.println("Мед. участок");
+                    System.out.printf("%-30s%-30s%-30s\n","ID","Название мед. участка","ФИО заведующего мед. участка");
                     regionList.forEach(System.out::println);
                 }
                 catch (Exception ex){
@@ -130,13 +130,13 @@ public class RegionLogic {
                 }
             }
             case 2 -> {
-                System.out.print("Введите название кафедры:");
+                System.out.print("Введите название мед. участка:");
                 int region_name = scanner.nextInt();
                 try {
                     regionList = session.createQuery("SELECT d FROM Region d WHERE region_name =" + region_name,
                             Region.class).getResultList();
-                    System.out.println("Кафедра");
-                    System.out.printf("%-30s%-30s%-30s\n","ID","Название кафедры","ФИО заведующего кафедры");
+                    System.out.println("Мед. участок");
+                    System.out.printf("%-30s%-30s%-30s\n","ID","Название мед. участка","ФИО заведующего мед. участка");
                     regionList.forEach(System.out::println);
                 }
                 catch (Exception ex){
@@ -144,13 +144,13 @@ public class RegionLogic {
                 }
             }
             case 3 -> {
-                System.out.print("Введите ФИО заведующего кафедры:");
+                System.out.print("Введите ФИО заведующего мед. участка:");
                 int chairman_name = scanner.nextInt();
                 try {
                     regionList = session.createQuery("SELECT d FROM Region d WHERE chairman_name =" + chairman_name,
                             Region.class).getResultList();
-                    System.out.println("Кафедра");
-                    System.out.printf("%-30s%-30s%-30s\n","ID","Название кафедры","ФИО заведующего кафедры");
+                    System.out.println("Мед. участок");
+                    System.out.printf("%-30s%-30s%-30s\n","ID","Название мед. участка","ФИО заведующего мед. участка");
                     regionList.forEach(System.out::println);
                 }
                 catch (Exception ex){
